@@ -1,0 +1,43 @@
+# AstrBot 插件元数据。AstrBot 依赖本文件识别插件（缺失或字段不全时插件无法加载）。
+name: astrbot_plugin_onebot12
+display_name: OneBot 12 适配器
+desc: 为 AstrBot 接入 OneBot 12 标准（12.onebot.dev）：支持正向/反向 WebSocket 与 HTTP Webhook、HTTP 轮询四种通信方式，动作、消息段与事件按规范实现。
+short_desc: 按 OneBot 12 标准接入任意实现端（QQ / Telegram / Discord 等）
+version: v1.0.0
+author: lingyun14beta
+repo: https://github.com/lingyun14beta/astrbot_plugin_onebot12
+astrbot_version: ">=4.16.0"
+# 下限依据：平台适配器的 config_metadata / i18n_resources 需要 4.16.0；
+#   support_streaming_message=False、logo_path 在 3.4.0 / 4.3.0 即已可用。
+# 本插件只用到 astrbot.api 的公开导出，不依赖任何私有接口。
+
+# 插件市场用于分类与搜索的标签（市场侧字段，AstrBot 本体不读）
+tags:
+  - onebot
+  - onebot12
+  - adapter
+  - platform
+  - qq
+
+# 声明插件自身支持哪些平台适配器，取值必须是 ADAPTER_NAME_2_TYPE 的 key
+# （见 astrbot/core/star/filter/platform_adapter_type.py）。
+# 注意：onebot12 是插件注册的适配器，不在该映射表里，因此这里列出内置适配器。
+support_platforms:
+  - aiocqhttp
+  - telegram
+  - discord
+  - slack
+  - satori
+  - misskey
+  - line
+  - matrix
+  - kook
+  - lark
+  - dingtalk
+  - wecom
+  - qq_official
+  - qq_official_webhook
+  - weixin_official_account
+  - weixin_oc
+  - mattermost
+  - webchat
